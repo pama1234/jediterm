@@ -2,3 +2,7 @@ out/**
 .gradle
 .gradleBuild
 .idea/
+
+*/bin/
+.vscode/
+local.properties
