@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import com.jediterm.core.Platform;
+import com.jediterm.core.compatibility.Charsets;
 import com.jediterm.pty.PtyProcessTtyConnector;
 import com.jediterm.terminal.LoggingTtyConnector;
 import com.jediterm.terminal.TtyConnector;
@@ -29,14 +30,13 @@ import com.jediterm.terminal.ui.UIUtil;
 import com.jediterm.terminal.ui.settings.DefaultTabbedSettingsProvider;
 import com.jediterm.terminal.ui.settings.SettingsProvider;
 import com.jediterm.terminal.ui.settings.TabbedSettingsProvider;
+import com.jediterm.terminal.util.Pair;
 import com.jediterm.ui.AbstractTerminalFrame;
 import com.pty4j.PtyProcess;
 import com.pty4j.PtyProcessBuilder;
 
-import kotlin.Pair;
 import kotlin.collections.ArraysKt;
 import kotlin.jvm.functions.Function1;
-import kotlin.text.Charsets;
 
 public final class JediTerm extends AbstractTerminalFrame{
   @NotNull
@@ -63,18 +63,8 @@ public final class JediTerm extends AbstractTerminalFrame{
         // Intrinsics.checkNotNullExpressionValue(var10001,"settingsProvider");
         return var10000.createTerminalWidget(var10001);
       }
-      //  // $FF: synthetic method
-      //  // $FF: bridge method
-      //  public JediTermWidget createInnerTerminalWidget() {
-      //   return (JediTermWidget)this.createInnerTerminalWidget();
-      //  }
     });
   }
-  //  // $FF: synthetic method
-  //  // $FF: bridge method
-  //  public AbstractTabbedTerminalWidget createTabbedTerminalWidget() {
-  //     return (AbstractTabbedTerminalWidget)this.createTabbedTerminalWidget();
-  //  }
   @NotNull
   public TtyConnector createTtyConnector() {
     try {
@@ -114,11 +104,6 @@ public final class JediTerm extends AbstractTerminalFrame{
     widget.addHyperlinkFilter((HyperlinkFilter)(new UrlFilter()));
     return widget;
   }
-  //  // $FF: synthetic method
-  //  // $FF: bridge method
-  //  public JediTermWidget createTerminalWidget(TabbedSettingsProvider var1) {
-  //     return (JediTermWidget)this.createTerminalWidget(var1);
-  //  }
   public static final class LoggingPtyProcessTtyConnector extends PtyProcessTtyConnector implements LoggingTtyConnector{
     private final int MAX_LOG_SIZE;
     private final LinkedList myDataChunks;

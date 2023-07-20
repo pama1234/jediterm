@@ -1,18 +1,22 @@
 package com.jediterm.app;
 
-import com.jediterm.terminal.ui.TerminalWidget;
-import com.jediterm.terminal.ui.settings.TabbedSettingsProvider;
-import com.jediterm.ui.AbstractTabbedTerminalWidget;
-import com.jediterm.ui.AbstractTabs;
-import kotlin.Pair;
-import org.jetbrains.annotations.NotNull;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.function.Function;
+
+import javax.swing.JComponent;
+import javax.swing.JTabbedPane;
+
+import org.jetbrains.annotations.NotNull;
+
+import com.jediterm.terminal.ui.TerminalWidget;
+import com.jediterm.terminal.ui.settings.TabbedSettingsProvider;
+import com.jediterm.ui.AbstractTabbedTerminalWidget;
+import com.jediterm.ui.AbstractTabs;
+
+import kotlin.Pair;
 
 /**
  * @author traff

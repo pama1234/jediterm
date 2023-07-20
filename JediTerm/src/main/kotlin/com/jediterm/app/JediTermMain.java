@@ -15,13 +15,12 @@ import javax.swing.SwingUtilities;
 
 import org.jetbrains.annotations.NotNull;
 
-import kotlin.Unit;
-import kotlin.jvm.JvmStatic;
+import com.jediterm.core.compatibility.Charsets;
 
 public final class JediTermMain{
   @NotNull
   public static final JediTermMain INSTANCE;
-  @JvmStatic
+  // @JvmStatic
   public static final void main(@NotNull String[] arg) {
     // Intrinsics.checkNotNullParameter(arg,"arg");
     INSTANCE.configureJavaUtilLogging();
@@ -31,7 +30,7 @@ public final class JediTermMain{
     String format="[%1$tF %1$tT] [%4\\$-7s] %5$s %n";
     LogManager var10000=LogManager.getLogManager();
     String var2="java.util.logging.SimpleFormatter.format="+format;
-    Charset var3=Charset.forName("UTF-8");
+    Charset var3=Charsets.UTF_8;
     byte[] var10003=var2.getBytes(var3);
     // Intrinsics.checkNotNullExpressionValue(var10003,"this as java.lang.String).getBytes(charset)");
     try {
@@ -43,9 +42,9 @@ public final class JediTermMain{
     }
     Logger rootLogger=Logger.getLogger("");
     ConsoleHandler var9=new ConsoleHandler();
-    int var5=0;
+    // int var5=0;
     var9.setLevel(Level.ALL);
-    Unit var7=Unit.INSTANCE;
+    // Unit var7=Unit.INSTANCE;
     rootLogger.addHandler((Handler)var9);
     // Intrinsics.checkNotNullExpressionValue(rootLogger,"rootLogger");
     rootLogger.setLevel(Level.INFO);
