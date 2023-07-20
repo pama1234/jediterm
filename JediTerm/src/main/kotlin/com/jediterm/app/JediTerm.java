@@ -35,9 +35,6 @@ import com.jediterm.ui.AbstractTerminalFrame;
 import com.pty4j.PtyProcess;
 import com.pty4j.PtyProcessBuilder;
 
-import kotlin.collections.ArraysKt;
-import kotlin.jvm.functions.Function1;
-
 public final class JediTerm extends AbstractTerminalFrame{
   @NotNull
   protected JediTabbedTerminalWidget createTabbedTerminalWidget() {
@@ -87,12 +84,12 @@ public final class JediTerm extends AbstractTerminalFrame{
         var10000=UIUtil.isMac?new String[] {shell,"--login"}:new String[] {shell};
       }
       String[] command=var10000;
-      AbstractTerminalFrame.LOG.info("Starting "+command+" "+(CharSequence)null+" "+(CharSequence)null+" "+(CharSequence)null+" "+0+" "+(CharSequence)null+" "+(Function1)null+" "+63,(Object)null);
+      AbstractTerminalFrame.LOG.info("Starting "+command+" "+(CharSequence)null+" "+(CharSequence)null+" "+(CharSequence)null+" "+0+" "+(CharSequence)null+" "+null+" "+63,(Object)null);
       PtyProcess var8=(new PtyProcessBuilder()).setCommand(command).setEnvironment((Map)envs).setConsole(false).setUseWinConPty(true).start();
       // Intrinsics.checkNotNullExpressionValue(var8,"PtyProcessBuilder()\n  …ty(true)\n    .start()");
       PtyProcess process=var8;
       // Intrinsics.checkNotNullExpressionValue(charset,"charset");
-      return (TtyConnector)(new LoggingPtyProcessTtyConnector(process,charset,ArraysKt.toList(command)));
+      return (TtyConnector)(new LoggingPtyProcessTtyConnector(process,charset,Arrays.asList(command)));
     }catch(Exception var5) {
       throw new IllegalStateException((Throwable)var5);
     }
@@ -114,7 +111,7 @@ public final class JediTerm extends AbstractTerminalFrame{
       // Intrinsics.checkNotNullParameter(buf,"buf");
       int len=super.read(buf,offset,length);
       if(len>0) {
-        char[] arr=ArraysKt.copyOfRange(buf,offset,len);
+        char[] arr=Arrays.copyOfRange(buf,offset,len);
         this.myDataChunks.add(arr);
         JediTermWidget var10000=this.myWidget;
         // Intrinsics.checkNotNull(var10000);

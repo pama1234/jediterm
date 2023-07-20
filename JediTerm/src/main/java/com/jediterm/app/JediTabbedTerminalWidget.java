@@ -13,10 +13,10 @@ import org.jetbrains.annotations.NotNull;
 
 import com.jediterm.terminal.ui.TerminalWidget;
 import com.jediterm.terminal.ui.settings.TabbedSettingsProvider;
+import com.jediterm.terminal.util.Pair;
 import com.jediterm.ui.AbstractTabbedTerminalWidget;
 import com.jediterm.ui.AbstractTabs;
 
-import kotlin.Pair;
 
 /**
  * @author traff

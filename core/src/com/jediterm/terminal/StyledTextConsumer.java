@@ -1,7 +1,8 @@
 package com.jediterm.terminal;
 
-import com.jediterm.terminal.model.CharBuffer;
 import org.jetbrains.annotations.NotNull;
+
+import com.jediterm.terminal.model.CharBuffer;
 
 /**
  * General interface that obtains styled range of characters at coordinates (<b>x</b>, <b>y</b>) when the screen starts at <b>startRow</b>
